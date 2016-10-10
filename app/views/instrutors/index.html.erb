@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Professores</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Profissão</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @instrutors.each do |instrutor| %>
+      <tr>
+        <td><%= instrutor.nome %></td>
+        <td><%= instrutor.email %></td>
+        <td><%= instrutor.profissao %></td>
+        <td>
+          <%= link_to 'Show', instrutor, :class => 'btn btn-info' %>
+          <%= link_to 'Editar', edit_instrutor_path(instrutor), :class => 'btn btn-primary' %>
+          <%= link_to 'Excluir', instrutor, method: :delete, data: { confirm: 'Deseja realmente excluir?' }, :class => 'btn btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Novo Professor', new_instrutor_path, :class => 'btn btn-primary' %>

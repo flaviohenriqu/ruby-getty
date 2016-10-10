@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @instrutor.nome %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @instrutor.email %>
+</p>
+
+<p>
+  <strong>Profissao:</strong>
+  <%= @instrutor.profissao %>
+</p>
+
+<div class="form-actions">
+	<%= link_to 'Edit', edit_instrutor_path(@instrutor), :class => 'btn btn-primary' %> |
+	<%= link_to 'Back', instrutors_path, :class => 'btn btn-danger' %>
+</div>
